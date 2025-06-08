@@ -1,36 +1,269 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Collaborative Task Manager
 
-## Getting Started
+A modern task management application with drag-and-drop functionality, built with Next.js, TypeScript, and React.
 
-First, run the development server:
+## 🚀 Quick Start (Run Locally in 2 Minutes)
+
+### Prerequisites
+
+- **Node.js 18+** ([Download here](https://nodejs.org/))
+- **Git** ([Download here](https://git-scm.com/))
+
+### Step 1: Clone the Repository
+
+```bash
+git clone <your-repository-url>
+cd collaborative-task-manager
+```
+
+### Step 2: Install Dependencies
+
+```bash
+npm install
+```
+
+This will install all required packages (~2-3 minutes).
+
+### Step 3: Start the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Step 4: Open Your Browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Navigate to **http://localhost:3000**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🎉 **You should see the Task Manager application running!**
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ✅ What You Should See
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Main Features Working:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Task Board**: Three columns (To Do, In Progress, Done) with sample tasks
+2. **Create Tasks**: Click "New Task" button to add new tasks
+3. **Drag & Drop**: Drag tasks between columns
+4. **Search & Filter**: Use the search bar and filter dropdown
+5. **Recipe Page**: Click "Recipes" in header to browse recipes
 
-## Deploy on Vercel
+### Sample Data:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The app comes with pre-loaded sample tasks so you can immediately test all features.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠 Available Commands
+
+```bash
+# Start development server (with hot reload)
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server (run build first)
+npm run start
+
+# Run TypeScript type checking
+npm run type-check
+
+# Run ESLint
+npm run lint
+```
+
+---
+
+## 🔧 Troubleshooting
+
+### Common Issues & Solutions:
+
+#### ❌ "Port 3000 is already in use"
+
+```bash
+# Solution 1: Kill process on port 3000
+npx kill-port 3000
+
+# Solution 2: Use different port
+npm run dev -- -p 3001
+# Then visit http://localhost:3001
+```
+
+#### ❌ "Node version not supported"
+
+```bash
+# Check your Node version
+node --version
+
+# Must be 18.0.0 or higher
+# Download latest from https://nodejs.org/
+```
+
+#### ❌ "Command not found: npm"
+
+- Install Node.js from [nodejs.org](https://nodejs.org/) (includes npm)
+- Or install using package manager:
+
+  ```bash
+  # macOS with Homebrew
+  brew install node
+
+  # Ubuntu/Debian
+  sudo apt install nodejs npm
+
+  # Windows with Chocolatey
+  choco install nodejs
+  ```
+
+#### ❌ "npm install fails"
+
+```bash
+# Clear cache and retry
+npm cache clean --force
+rm -rf node_modules package-lock.json
+npm install
+```
+
+#### ❌ "TypeScript errors"
+
+```bash
+# Check for errors
+npm run type-check
+
+# Most errors will auto-resolve, but you can still run the app
+npm run dev
+```
+
+---
+
+## 🌐 Alternative Package Managers
+
+### Using Yarn:
+
+```bash
+yarn install
+yarn dev
+```
+
+### Using pnpm:
+
+```bash
+pnpm install
+pnpm dev
+```
+
+---
+
+## 📱 Testing the Application
+
+### 1. Task Management
+
+- ✅ Create a new task (click "New Task")
+- ✅ Fill in title, description, priority, etc.
+- ✅ Drag tasks between columns
+- ✅ Edit existing tasks (click ⋮ menu)
+- ✅ Delete tasks (with confirmation)
+- ✅ Use search and filters
+
+### 2. Recipe Feature
+
+- ✅ Click "Recipes" in the header
+- ✅ Browse recipe list
+- ✅ Search for specific recipes
+- ✅ Click eye icon to view recipe details
+- ✅ View ingredients and instructions
+
+### 3. Responsive Design
+
+- ✅ Resize browser window
+- ✅ Test on mobile device
+- ✅ Verify all features work on small screens
+
+---
+
+## 🎯 Production Build
+
+To test the production build locally:
+
+```bash
+# Build the application
+npm run build
+
+# Start production server
+npm start
+
+# Visit http://localhost:3000
+```
+
+---
+
+## 📂 Project Structure (For Reference)
+
+```
+collaborative-task-manager/
+├── src/
+│   ├── app/                    # Next.js app router
+│   │   ├── page.tsx           # Main task board page
+│   │   ├── recipes/page.tsx   # Recipe collection page
+│   │   └── layout.tsx         # Root layout
+│   ├── components/
+│   │   ├── ui/                # shadcn/ui components
+│   │   ├── task/              # Task management components
+│   │   └── recipe/            # Recipe components
+│   ├── lib/                   # Types, validations, utilities
+│   ├── hooks/                 # Custom React hooks
+│   └── store/                 # Zustand state management
+├── package.json               # Dependencies and scripts
+├── tailwind.config.js         # Tailwind CSS configuration
+├── tsconfig.json             # TypeScript configuration
+└── next.config.js            # Next.js configuration
+```
+
+---
+
+## 🔍 Key Technologies Used
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS + shadcn/ui
+- **State Management**: Zustand
+- **Data Fetching**: TanStack Query
+- **Forms**: React Hook Form + Zod validation
+- **Drag & Drop**: @dnd-kit
+
+---
+
+## 🆘 Need Help?
+
+### Check if everything is working:
+
+1. **Node.js**: `node --version` (should be 18+)
+2. **Dependencies**: `npm list` (should show installed packages)
+3. **Build**: `npm run build` (should complete without errors)
+4. **TypeScript**: `npm run type-check` (should pass)
+
+### Still having issues?
+
+1. Try deleting `node_modules` and `package-lock.json`, then run `npm install` again
+2. Make sure you're in the project directory
+3. Check that your internet connection is stable (for installing dependencies)
+4. Try using a different terminal/command prompt
+
+---
+
+## 🎉 Success!
+
+If you can see the task board with sample tasks and can drag them between columns, you're all set!
+
+The application includes:
+
+- ✅ Full CRUD operations for tasks
+- ✅ Drag and drop functionality
+- ✅ Search and filtering
+- ✅ Form validation
+- ✅ Recipe browsing (bonus feature)
+- ✅ Responsive design
+- ✅ TypeScript throughout
+
+**Happy task managing! 🚀**
